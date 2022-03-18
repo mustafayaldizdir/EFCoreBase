@@ -1,13 +1,10 @@
-﻿using EFCoreBase.Domain.Entites;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFCoreBase.Domain.Configurations
+namespace EFCoreBase.Persistence.Configurations
 {
     internal class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
@@ -15,11 +12,11 @@ namespace EFCoreBase.Domain.Configurations
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
-            builder.Property(x => x.Name).IsRequired();
-            builder.Property(x => x.Name).HasMaxLength(200);
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(200);
             builder.Property(x => x.UnitPrice).HasColumnType("decimal(18,2)");
             builder.Property(x => x.StartDate).IsRequired();
             builder.Property(x => x.EndDate).IsRequired();
+            builder.ToTable("Products");
         }
     }
 }

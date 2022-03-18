@@ -17,6 +17,8 @@ namespace EFCoreBase.Domain.Entites
         public DateTime EndDate { get; set; }
         public bool IsDeleted { get; set; }
 
+        public Category Category { get; set; }
+
 
     }
 }

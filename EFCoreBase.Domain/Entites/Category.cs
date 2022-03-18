@@ -12,5 +12,6 @@ namespace EFCoreBase.Domain.Entites
         public string Name { get; set; }
         public int ParentId { get; set; }
 
+        public ICollection<Product> Products { get; set; }
     }
 }
