@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EFCoreBase.Domain.Entites;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EFCoreBase.Persistence.Seeds
 {
-    internal class ProductSeed : IEntityTypeConfiguration<Product>
+    public class ProductSeed : IEntityTypeConfiguration<Product>
     {
         private readonly int[] _ids;
         public ProductSeed(int[] ids)
