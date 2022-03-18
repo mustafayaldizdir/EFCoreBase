@@ -1,2 +1,2 @@
 # EFCoreBase
-You can use this project theme for create last version .net core application.
+You can use this project template for create last version .net core application.
