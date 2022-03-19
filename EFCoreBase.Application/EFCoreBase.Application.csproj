@@ -10,4 +10,8 @@
     <ProjectReference Include="..\EFCoreBase.Domain\EFCoreBase.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.15.0" />
+  </ItemGroup>
+
 </Project>
