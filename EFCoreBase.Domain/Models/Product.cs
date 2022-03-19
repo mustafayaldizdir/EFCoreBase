@@ -6,7 +6,7 @@ namespace EFCoreBase.Domain.Models
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
 
         [BsonRepresentation(MongoDB.Bson.BsonType.Decimal128)]

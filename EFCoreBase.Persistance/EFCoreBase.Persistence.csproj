@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EFCoreBase.Application\EFCoreBase.Application.csproj" />
     <ProjectReference Include="..\EFCoreBase.Domain\EFCoreBase.Domain.csproj" />
+    <ProjectReference Include="..\EFCoreBase.Infrastructure\EFCoreBase.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

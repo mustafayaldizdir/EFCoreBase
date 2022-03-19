@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EFCoreBase.Application.Dto
 {
-    public class ResponseModel<T> where T : class
+    public class Response<T> 
     {
         public T Data { get; set; }
 
@@ -18,19 +18,19 @@ namespace EFCoreBase.Application.Dto
 
         public List<string> Errors{ get; set; }
 
-        public static ResponseModel<T> Success(T data,int statusCode)
+        public static Response<T> Success(T data,int statusCode)
         {
-            return new ResponseModel<T> { StatusCode = statusCode, Data = data,IsSuccess = true };
+            return new Response<T> { StatusCode = statusCode, Data = data,IsSuccess = true };
         }
 
-        public static ResponseModel<T> Success(int statusCode)
+        public static Response<T> Success(int statusCode)
         {
-            return new ResponseModel<T> { Data = default(T), StatusCode = statusCode, IsSuccess = true };
+            return new Response<T> { Data = default(T), StatusCode = statusCode, IsSuccess = true };
         }
 
-        public static ResponseModel<T> Fail(List<string> errors,int statusCode)
+        public static Response<T> Fail(List<string> errors,int statusCode)
         {
-            return new ResponseModel<T>
+            return new Response<T>
             {
                 Errors = errors,
                 StatusCode = statusCode,
@@ -38,10 +38,10 @@ namespace EFCoreBase.Application.Dto
             };
         }
 
-        public static ResponseModel<T> Fail(string error,int statusCode)
+        public static Response<T> Fail(string error,int statusCode)
         {
 
-            return new ResponseModel<T> 
+            return new Response<T> 
             { 
                 Errors = new List<string> { error }, 
                 StatusCode = statusCode, 
