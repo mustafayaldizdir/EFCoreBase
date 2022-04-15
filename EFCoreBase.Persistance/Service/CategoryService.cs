@@ -34,8 +34,9 @@ namespace EFCoreBase.Persistence.Service
             return Response<List<CategoryDto>>.Success(_mapper.Map<List<CategoryDto>>(categories),200);
         }
 
-        public async Task<Response<CategoryDto>> CreateAllAsync(Category category)
+        public async Task<Response<CategoryDto>> CreateAllAsync(CategoryDto categoryDto)
         {
+            var category = _mapper.Map<Category>(categoryDto);
             await _categoryCollection.InsertOneAsync(category);
            return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(category),200);
         }

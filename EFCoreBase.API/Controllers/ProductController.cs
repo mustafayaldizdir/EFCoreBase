@@ -24,12 +24,15 @@ namespace EFCoreBase.API.Controllers
             return CreateActionResultInstance(response);
         }
 
+        [HttpGet]
         [Route("/api/[controller]/GetAllByUserId/{userId}")]
         public async Task<IActionResult> GetAllByUserId(string id)
         {
             var response = await _productService.GetAllByUserIdAsync(id);
             return CreateActionResultInstance(response);
         }
+
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var response = await _productService.GetProductsAsync();
@@ -56,7 +59,5 @@ namespace EFCoreBase.API.Controllers
             var response = await _productService.DeleteAsync(id);
             return CreateActionResultInstance(response);
         }
-
-
     }
 }

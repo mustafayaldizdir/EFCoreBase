@@ -12,7 +12,7 @@ namespace EFCoreBase.Application.Interfaces.Service
     public interface ICategoryService
     {
         public Task<Response<List<CategoryDto>>> GetAllAsync();
-        public Task<Response<CategoryDto>> CreateAllAsync(Category category);
+        public Task<Response<CategoryDto>> CreateAllAsync(CategoryDto categoryDto);
         public Task<Response<CategoryDto>> GetByIdAsync(string id);
     }
 }
