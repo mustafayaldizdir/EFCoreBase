@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EFCoreBase.Application\EFCoreBase.Application.csproj" />
     <ProjectReference Include="..\EFCoreBase.Infrastructure\EFCoreBase.Infrastructure.csproj" />
+    <ProjectReference Include="..\EFCoreBase.Persistance\EFCoreBase.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

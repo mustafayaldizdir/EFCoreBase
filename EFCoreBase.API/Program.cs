@@ -1,7 +1,8 @@
+using EFCoreBase.Application.Interfaces.Service;
 using EFCoreBase.Infrastructure.Settings.Abstract;
 using EFCoreBase.Infrastructure.Settings.Concrete;
-
-
+using EFCoreBase.Persistence.Service;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddScoped<ICategoryService,CategoryService>();
+builder.Services.AddScoped<IProductService,ProductService>();
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
 builder.Services.AddSingleton<IDatabaseSettings>(sp =>
 {
-    return sp.GetRequiredService<DatabaseSettings>();
+    return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;
 
 });
 
